@@ -16,35 +16,63 @@ public class TP1_convertisseur_Cabooter {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Veuillez saisir une valeur réelle : ");
-        double Val = scanner.nextDouble();
-        System.out.println( Val);
-        System.out.print("Saisissez la conversion que vous souhaiter effectuer :");
-        System.out.print(" 1) De Celcius vers Kelvin ");
-        System.out.print(" 2) De Kelvin vers Celcius ");
-        System.out.print(" 3) De Farenheit vers Celcius ");
-        System.out.print(" 4) De Celcius vers Farenheit ");
-        System.out.print(" 5) De Kelvin vers Farenheit ");
-        System.out.print(" 6) De Farenheit vers Kelvin ");
         
-        double result = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Veuillez saisir une valeur reelle : ");
+        
+        double val = scanner.nextDouble();
+        
+        System.out.println( val);
+        System.out.println("Saisissez la conversion que vous souhaiter effectuer :");
+        System.out.println(" 1) De Celcius vers Kelvin ");
+        System.out.println(" 2) De Kelvin vers Celcius ");
+        System.out.println(" 3) De Farenheit vers Celcius ");
+        System.out.println(" 4) De Celcius vers Farenheit ");
+        System.out.println(" 5) De Kelvin vers Farenheit ");
+        System.out.println(" 6) De Farenheit vers Kelvin ");
+        
+        String uniteInitiale = "";
+        String uniteFinale = "";
+        
+        double resultat = 0;
         int Convertion = scanner.nextInt();
         
         switch (Convertion) {
-            case 1 -> result = CelciusVersKelvin (Val); 
-            case 2 -> result = KelvinVersCelcius ( Val );
-            case 3 -> result = FarenheitVersCelcius ( Val );
-            case 4 -> result = CelciusVersFarenheit ( Val );
-            case 5 -> result = KelvinVersFarenheit ( Val );
-            case 6 -> result = FarenheitVersKelvin ( Val );
+            case 1 -> {
+                resultat = CelciusVersKelvin(val);
+                uniteInitiale = "degres Celsius";
+                uniteFinale = "Kelvin";
+            }
+            case 2 -> {
+                resultat = KelvinVersCelcius(val);
+                uniteInitiale = "Kelvin";
+                uniteFinale = "degres Celsius";
+            }
+            case 3 -> {
+                resultat = FarenheitVersCelcius(val);
+                uniteInitiale = "degrés Fahrenheit";
+                uniteFinale = "degres Celsius";
+            }
+            case 4 -> {
+                resultat = CelciusVersFarenheit(val);
+                uniteInitiale = "degrés Celsius";
+                uniteFinale = "degres Fahrenheit";
+            }
+            case 5 -> {
+                resultat = KelvinVersFarenheit(val);
+                uniteInitiale = "Kelvin";
+                uniteFinale = "degres Fahrenheit";
+            }
+            case 6 -> {
+                resultat = FarenheitVersKelvin(val);
+                uniteInitiale = "degres Fahrenheit";
+                uniteFinale = "Kelvin";
+            }
+            
             
         }
         
-                
-            
-         
-        
+        System.out.println(val + " " + uniteInitiale + " est egal a " + resultat + " " + uniteFinale);
     }
     
 
